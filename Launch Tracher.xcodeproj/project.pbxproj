@@ -44,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D9B43942B866E71005FE98B /* Launch-Tracher-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Launch-Tracher-Info.plist"; sourceTree = SOURCE_ROOT; };
 		2D9F8DEA2B80595600E89F8C /* Launch Tracher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Launch Tracher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D9F8DED2B80595600E89F8C /* LaunchTracherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTracherApp.swift; sourceTree = "<group>"; };
 		2D9F8DEF2B80595600E89F8C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -116,6 +117,7 @@
 		2D9F8DEC2B80595600E89F8C /* Launch Tracher */ = {
 			isa = PBXGroup;
 			children = (
+				2D9B43942B866E71005FE98B /* Launch-Tracher-Info.plist */,
 				2D9F8E2C2B85239F00E89F8C /* Misc */,
 				2D9F8E212B80607000E89F8C /* Model */,
 				2D9F8E1E2B805FE200E89F8C /* View Model */,
@@ -491,6 +493,8 @@
 				DEVELOPMENT_TEAM = JVG9YGW59X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Launch-Tracher-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -520,6 +524,8 @@
 				DEVELOPMENT_TEAM = JVG9YGW59X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Launch-Tracher-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
