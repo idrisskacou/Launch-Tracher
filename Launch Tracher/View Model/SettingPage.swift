@@ -9,8 +9,13 @@ import SwiftUI
 
 struct SettingPage: View {
     var body: some View {
-        Text("Setting Page")
-        
+        VStack{
+            Text("Setting Page")
+                .font(.title)
+            Text("Under maintenance")
+                .font(.subheadline)
+                .foregroundStyle(.red)
+        }
     }
 }
 

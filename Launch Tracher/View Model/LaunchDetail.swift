@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
-
+// Launch detail page
 struct LaunchDetail: View {
-    var upcomingLaunchInfo: LaunchInformation
+    // Add a reminder when it is going to launch
+    // Add countdown on the launch detail view
+    var upcomingLaunchInfo: Appetizer
     var body: some View {
         VStack(spacing: 20){
             Spacer()
@@ -30,13 +32,12 @@ struct LaunchDetail: View {
                 Text(upcomingLaunchInfo.upcomingLaunchTime) //clock
                     .fontWeight(.bold)
                     .font(.title3)
-                    
             }
             Text(upcomingLaunchInfo.upcomingLaunchDescription)
                 .font(.body)
                 .padding()
             Spacer()
-            Link(destination: upcomingLaunchInfo.url!, label: {
+            Link(destination: upcomingLaunchInfo.urlString!, label: {
                 Text("Watch Now")
                     .bold()
                     .font(.title)
@@ -52,6 +53,7 @@ struct LaunchDetail: View {
 }
 
 #Preview {
-    LaunchDetail(upcomingLaunchInfo: UpcomingLaunchList.toTenUpcomingLaunch.first!)
+    // Testing with the Mock data before testing with API
+    LaunchDetail(upcomingLaunchInfo: MockData.upcomingmockdata.first!)
     
 }

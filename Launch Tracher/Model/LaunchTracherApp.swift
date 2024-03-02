@@ -10,25 +10,10 @@ import SwiftData
 
 @main
 struct LaunchTracherApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
-
+    // Main Loading page for the application
     var body: some Scene {
         WindowGroup {
-            //UpcomingLaunch()
-            ContentView()
-            //BottomMenuTabBar()
+            Homepage()
         }
-        .modelContainer(sharedModelContainer)
     }
 }

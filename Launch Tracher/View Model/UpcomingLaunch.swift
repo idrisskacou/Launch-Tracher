@@ -9,35 +9,39 @@ import SwiftUI
 import CoreData
 
 struct UpcomingLaunch: View {
-    var upcomingLaunchInfo: [LaunchInformation] = UpcomingLaunchList.toTenUpcomingLaunch
+    // Home view of the homepage
+    @State private var upcomingLaunchInfo: [Appetizer] = []
+    
     var body: some View {
         NavigationView{
             
-            List(upcomingLaunchInfo, id: \.id){ launch in
-                NavigationLink(destination: LaunchDetailView(upcomingLaunchInfo: launch), label: {
-                    HStack{
-                        Image(launch.upcomingLaunchImage)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: 70)
-                            .presentationCornerRadius(5)
-                        VStack(alignment: .leading, spacing: 5){
-                            Text(launch.upcomingLaunchTitle)
-                                .fontWeight(.semibold)
-                                .lineLimit(2)
-                                .minimumScaleFactor(0.5)
-                            Text(launch.upcomingLaunchDate)
-                                .font(.subheadline)
-                                .fontWeight(.regular)
-                            Text(launch.upcomingLaunchDescription)
-                                .lineLimit(2)
-                        }
-                    }
+            List(upcomingLaunchInfo){ launch in
+                NavigationLink(destination: LaunchDetail(upcomingLaunchInfo: launch), label: {
+                    LaunchListCell(launch: launch)
                 })
+//                LaunchListCell(launch: launch)
             }
-            .navigationTitle("Upcoming Launch")
+            .navigationTitle("VANDENBERG LAUNCH")
+        }
+        .onAppear{
+            getAppetizers()
         }
     }
+    func getAppetizers() {
+        NetworkManager.shared.getvandenbergAPI { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let launch):
+                    self.upcomingLaunchInfo = launch
+                    // Update the @State variable
+                case .failure(let error):
+                    print("Error fetching appetizers: \(error)")
+                }
+            }
+        }
+    }
+    
+    
 }
 
 #Preview {

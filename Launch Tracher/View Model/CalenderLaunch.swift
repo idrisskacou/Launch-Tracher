@@ -15,9 +15,6 @@ struct CalenderLaunch: View {
             Text("Under maintenance")
                 .font(.subheadline)
                 .foregroundStyle(.red)
-            //            .inspector(isPresented: /*@START_MENU_TOKEN@*/.constant(true)/*@END_MENU_TOKEN@*/) {
-            //            Text("Content")
-            //        }
         }
     }
 }
