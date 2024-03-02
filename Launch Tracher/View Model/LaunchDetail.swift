@@ -1,5 +1,5 @@
 //
-//  LaunchDetailView.swift
+//  LaunchDetail.swift
 //  Launch Tracker
 //
 //  Created by idriss on 1/8/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LaunchDetailView: View {
+struct LaunchDetail: View {
     var upcomingLaunchInfo: LaunchInformation
     var body: some View {
         VStack(spacing: 20){
@@ -36,7 +36,7 @@ struct LaunchDetailView: View {
                 .font(.body)
                 .padding()
             Spacer()
-            Link(destination: upcomingLaunchInfo.url, label: {
+            Link(destination: upcomingLaunchInfo.url!, label: {
                 Text("Watch Now")
                     .bold()
                     .font(.title)
@@ -52,5 +52,6 @@ struct LaunchDetailView: View {
 }
 
 #Preview {
-    LaunchDetailView(upcomingLaunchInfo: UpcomingLaunchList.toTenUpcomingLaunch.first!)
+    LaunchDetail(upcomingLaunchInfo: UpcomingLaunchList.toTenUpcomingLaunch.first!)
+    
 }

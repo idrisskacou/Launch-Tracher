@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct bottomTabBar: View {
+struct Homepage: View {
     init(){
         UITabBar.appearance().isHidden = false
     }
@@ -32,5 +32,5 @@ struct bottomTabBar: View {
 }
 
 #Preview {
-    bottomTabBar()
+    Homepage()
 }
